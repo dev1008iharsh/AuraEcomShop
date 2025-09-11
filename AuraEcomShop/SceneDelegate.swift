@@ -4,6 +4,7 @@
 //
 //  Created by Harsh on 11/09/25.
 //
+//In this app I will build the E-Commerce application where different kind of products can be sell very easily.
 
 import UIKit
 

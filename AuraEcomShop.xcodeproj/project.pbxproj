@@ -6,6 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04FD7D6C2E73EA8000051644 /* Abtesting in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D6B2E73EA8000051644 /* Abtesting */; };
+		04FD7D6E2E73EA8000051644 /* AbtestingV3 in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D6D2E73EA8000051644 /* AbtestingV3 */; };
+		04FD7D702E73EA8000051644 /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D6F2E73EA8000051644 /* Analytics */; };
+		04FD7D722E73EA8000051644 /* Composition in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D712E73EA8000051644 /* Composition */; };
+		04FD7D742E73EA8000051644 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D732E73EA8000051644 /* Core */; };
+		04FD7D772E73EAA500051644 /* EmptyDataSet-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D762E73EAA500051644 /* EmptyDataSet-Swift */; };
+		04FD7D7A2E73EABD00051644 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D792E73EABD00051644 /* FirebaseAI */; };
+		04FD7D7C2E73EABD00051644 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D7B2E73EABD00051644 /* FirebaseAnalytics */; };
+		04FD7D7E2E73EABD00051644 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D7D2E73EABD00051644 /* FirebaseAnalyticsCore */; };
+		04FD7D802E73EABD00051644 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D7F2E73EABD00051644 /* FirebaseAnalyticsIdentitySupport */; };
+		04FD7D822E73EABD00051644 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D812E73EABD00051644 /* FirebaseAppCheck */; };
+		04FD7D852E73EAD000051644 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D842E73EAD000051644 /* NVActivityIndicatorView */; };
+		04FD7D872E73EAD000051644 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D862E73EAD000051644 /* NVActivityIndicatorViewExtended */; };
+		04FD7D8A2E73EAE500051644 /* RazorpayCheckout in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D892E73EAE500051644 /* RazorpayCheckout */; };
+		04FD7D8D2E73EAF500051644 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 04FD7D8C2E73EAF500051644 /* YPImagePicker */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		04610D832E73038E008EE240 /* AuraEcomShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraEcomShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +54,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FD7D7A2E73EABD00051644 /* FirebaseAI in Frameworks */,
+				04FD7D8D2E73EAF500051644 /* YPImagePicker in Frameworks */,
+				04FD7D702E73EA8000051644 /* Analytics in Frameworks */,
+				04FD7D8A2E73EAE500051644 /* RazorpayCheckout in Frameworks */,
+				04FD7D7C2E73EABD00051644 /* FirebaseAnalytics in Frameworks */,
+				04FD7D772E73EAA500051644 /* EmptyDataSet-Swift in Frameworks */,
+				04FD7D872E73EAD000051644 /* NVActivityIndicatorViewExtended in Frameworks */,
+				04FD7D7E2E73EABD00051644 /* FirebaseAnalyticsCore in Frameworks */,
+				04FD7D6C2E73EA8000051644 /* Abtesting in Frameworks */,
+				04FD7D802E73EABD00051644 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
+				04FD7D6E2E73EA8000051644 /* AbtestingV3 in Frameworks */,
+				04FD7D852E73EAD000051644 /* NVActivityIndicatorView in Frameworks */,
+				04FD7D742E73EA8000051644 /* Core in Frameworks */,
+				04FD7D722E73EA8000051644 /* Composition in Frameworks */,
+				04FD7D822E73EABD00051644 /* FirebaseAppCheck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +111,21 @@
 			);
 			name = AuraEcomShop;
 			packageProductDependencies = (
+				04FD7D6B2E73EA8000051644 /* Abtesting */,
+				04FD7D6D2E73EA8000051644 /* AbtestingV3 */,
+				04FD7D6F2E73EA8000051644 /* Analytics */,
+				04FD7D712E73EA8000051644 /* Composition */,
+				04FD7D732E73EA8000051644 /* Core */,
+				04FD7D762E73EAA500051644 /* EmptyDataSet-Swift */,
+				04FD7D792E73EABD00051644 /* FirebaseAI */,
+				04FD7D7B2E73EABD00051644 /* FirebaseAnalytics */,
+				04FD7D7D2E73EABD00051644 /* FirebaseAnalyticsCore */,
+				04FD7D7F2E73EABD00051644 /* FirebaseAnalyticsIdentitySupport */,
+				04FD7D812E73EABD00051644 /* FirebaseAppCheck */,
+				04FD7D842E73EAD000051644 /* NVActivityIndicatorView */,
+				04FD7D862E73EAD000051644 /* NVActivityIndicatorViewExtended */,
+				04FD7D892E73EAE500051644 /* RazorpayCheckout */,
+				04FD7D8C2E73EAF500051644 /* YPImagePicker */,
 			);
 			productName = AuraEcomShop;
 			productReference = 04610D832E73038E008EE240 /* AuraEcomShop.app */;
@@ -107,6 +155,14 @@
 			);
 			mainGroup = 04610D7A2E73038E008EE240;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				04FD7D6A2E73EA8000051644 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */,
+				04FD7D752E73EAA500051644 /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */,
+				04FD7D782E73EABD00051644 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				04FD7D832E73EAD000051644 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				04FD7D882E73EAE500051644 /* XCRemoteSwiftPackageReference "razorpay-pod" */,
+				04FD7D8B2E73EAF500051644 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04610D842E73038E008EE240 /* Products */;
 			projectDirPath = "";
@@ -345,6 +401,135 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04FD7D6A2E73EA8000051644 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/algolia/algoliasearch-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.28.0;
+			};
+		};
+		04FD7D752E73EAA500051644 /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Xiaoye220/EmptyDataSet-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		04FD7D782E73EABD00051644 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.2.0;
+			};
+		};
+		04FD7D832E73EAD000051644 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView?utm_source=chatgpt.com";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		04FD7D882E73EAE500051644 /* XCRemoteSwiftPackageReference "razorpay-pod" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/razorpay/razorpay-pod";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.4;
+			};
+		};
+		04FD7D8B2E73EAF500051644 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04FD7D6B2E73EA8000051644 /* Abtesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D6A2E73EA8000051644 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Abtesting;
+		};
+		04FD7D6D2E73EA8000051644 /* AbtestingV3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D6A2E73EA8000051644 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = AbtestingV3;
+		};
+		04FD7D6F2E73EA8000051644 /* Analytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D6A2E73EA8000051644 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Analytics;
+		};
+		04FD7D712E73EA8000051644 /* Composition */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D6A2E73EA8000051644 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Composition;
+		};
+		04FD7D732E73EA8000051644 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D6A2E73EA8000051644 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Core;
+		};
+		04FD7D762E73EAA500051644 /* EmptyDataSet-Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D752E73EAA500051644 /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */;
+			productName = "EmptyDataSet-Swift";
+		};
+		04FD7D792E73EABD00051644 /* FirebaseAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D782E73EABD00051644 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAI;
+		};
+		04FD7D7B2E73EABD00051644 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D782E73EABD00051644 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		04FD7D7D2E73EABD00051644 /* FirebaseAnalyticsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D782E73EABD00051644 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsCore;
+		};
+		04FD7D7F2E73EABD00051644 /* FirebaseAnalyticsIdentitySupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D782E73EABD00051644 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsIdentitySupport;
+		};
+		04FD7D812E73EABD00051644 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D782E73EABD00051644 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		04FD7D842E73EAD000051644 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D832E73EAD000051644 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		04FD7D862E73EAD000051644 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D832E73EAD000051644 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+		04FD7D892E73EAE500051644 /* RazorpayCheckout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D882E73EAE500051644 /* XCRemoteSwiftPackageReference "razorpay-pod" */;
+			productName = RazorpayCheckout;
+		};
+		04FD7D8C2E73EAF500051644 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FD7D8B2E73EAF500051644 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04610D7B2E73038E008EE240 /* Project object */;
 }

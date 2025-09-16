@@ -1,5 +1,5 @@
 {
-  "originHash" : "018161265ec22a06063858c1155303589353472ae0c7ef9da4c04a08f94d6510",
+  "originHash" : "1077b83ebec6cc78b1cf77287dfbcdd5e23b88744a8f8f6afb13f62177795e85",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -8,15 +8,6 @@
       "state" : {
         "revision" : "bbe8b69694d7873315fd3a4ad41efe043e1c07c5",
         "version" : "1.2024072200.0"
-      }
-    },
-    {
-      "identity" : "algoliasearch-client-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/algolia/algoliasearch-client-swift",
-      "state" : {
-        "revision" : "50b1a1290ba00d3723adbe7407e4e664ce0929b5",
-        "version" : "9.28.0"
       }
     },
     {
@@ -29,21 +20,12 @@
       }
     },
     {
-      "identity" : "emptydataset-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Xiaoye220/EmptyDataSet-Swift",
-      "state" : {
-        "revision" : "ffaa10404b3c7582532887adc7a0f8558f656673",
-        "version" : "5.0.2"
-      }
-    },
-    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/firebase-ios-sdk",
+      "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "e2a3c3fbcaa1df3fd549b5b3f1175bc8a11912fd",
-        "version" : "12.2.0"
+        "revision" : "1cce11cf94d27e2fc194112cc7ad51e8fb279230",
+        "version" : "12.3.0"
       }
     },
     {
@@ -51,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
       "state" : {
-        "revision" : "a2d0f1f1666de591eb1a811f40b1706f5c63a2ed",
-        "version" : "2.3.0"
+        "revision" : "c7d04b7592d3a1d6f8b7ce4e103cfbcbd766f419",
+        "version" : "3.0.0"
       }
     },
     {
@@ -60,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "1c7edd5cc6e4ad22d2b81166bb9b208b9e63058a",
-        "version" : "12.2.0"
+        "revision" : "34f5306ed8c9d9493f6390b4c2a18f19ecad1da4",
+        "version" : "12.3.0"
       }
     },
     {
@@ -200,9 +182,9 @@
       }
     },
     {
-      "identity" : "nvactivityindicatorview?utm_source=chatgpt.com",
+      "identity" : "nvactivityindicatorview",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView?utm_source=chatgpt.com",
+      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView.git",
       "state" : {
         "revision" : "121455c4e630fcb95aaefd7e4257b0c2e3cfe6d5",
         "version" : "5.2.0"
@@ -218,15 +200,6 @@
       }
     },
     {
-      "identity" : "prynttrimmerview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/HHK1/PryntTrimmerView",
-      "state" : {
-        "revision" : "ac1b60a22c7e6a6514de7a66d2f3d5b537c956d5",
-        "version" : "4.0.2"
-      }
-    },
-    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",
@@ -236,30 +209,12 @@
       }
     },
     {
-      "identity" : "stevia",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/freshOS/Stevia",
-      "state" : {
-        "revision" : "cfb1a1d2159277bb553c3dc46f3f742c0275566d",
-        "version" : "5.1.2"
-      }
-    },
-    {
       "identity" : "swift-protobuf",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "e3f69fd321d0c9fcdc16fb576a0cdd956675face",
-        "version" : "1.31.0"
-      }
-    },
-    {
-      "identity" : "ypimagepicker",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Yummypets/YPImagePicker.git",
-      "state" : {
-        "revision" : "9d1c5e938c2de8f851da54af9037eda2d98ea649",
-        "version" : "5.3.0"
+        "revision" : "2547102afd04fe49f1b286090f13ebce07284980",
+        "version" : "1.31.1"
       }
     }
   ],

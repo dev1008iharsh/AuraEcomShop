@@ -125,8 +125,9 @@ final class HomeVC: UIViewController {
     
     @objc private func didTapAddCategory() {
         let addVC = AddCategoryVC()
-        let nav = UINavigationController(rootViewController: addVC)
-        present(nav, animated: true)
+        self.navigationController?.pushViewController(addVC, animated: true)
+        //let nav = UINavigationController(rootViewController: addVC)
+        //present(nav, animated: true)
     }
 }
 

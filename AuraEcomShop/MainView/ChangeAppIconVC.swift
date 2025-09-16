@@ -27,12 +27,27 @@ final class ChangeAppIconVC: UIViewController {
         return UIApplication.shared.alternateIconName ?? "AppIcon"
     }
 
+    /// Returns the set of alternate icon keys declared in Info.plist (CFBundleAlternateIcons)
+    private func declaredAlternateIconKeys() -> Set<String> {
+        guard
+            let bundleIcons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
+            let alternate = bundleIcons["CFBundleAlternateIcons"] as? [String: Any]
+        else { return [] }
+        return Set(alternate.keys)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "App Icons"
         view.backgroundColor = .AppTheme.background
         setupTable()
         setupNavBar()
+        
+        if !UIApplication.shared.supportsAlternateIcons {
+            #if DEBUG
+            print("[AppIcon] Alternate icons not supported on this device or OS.")
+            #endif
+        }
     }
 
     private func setupNavBar() {
@@ -75,6 +90,7 @@ final class ChangeAppIconVC: UIViewController {
     }
 
     // MARK: - Change icon
+    @available(iOS 10.3, *)
     private func setAppIcon(named iconName: String?) {
         // Check if alternate icons are supported
         guard UIApplication.shared.supportsAlternateIcons else {
@@ -85,7 +101,10 @@ final class ChangeAppIconVC: UIViewController {
             )
             return
         }
- 
+
+        #if DEBUG
+        print("[AppIcon] Attempting to set icon to: \(iconName ?? "AppIcon")")
+        #endif
 
         let current = UIApplication.shared.alternateIconName ?? "AppIcon"
         let target = iconName ?? "AppIcon"
@@ -93,16 +112,31 @@ final class ChangeAppIconVC: UIViewController {
         // Avoid redundant changes
         guard current != target else { return }
 
+        if let name = iconName {
+            let declared = declaredAlternateIconKeys()
+            if !declared.contains(name) {
+                AlertHelper.showOK(
+                    on: self,
+                    title: "Icon Not Configured",
+                    message: "The alternate icon '\(name)' is not declared in Info.plist under CFBundleAlternateIcons."
+                )
+                return
+            }
+        }
+
         UIApplication.shared.setAlternateIconName(iconName) { [weak self] error in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 if let error = error {
                     AlertHelper.showOK(
                         on: self,
-                        title: "Failed \(error)",
-                        message: "\("error.localizedDescription")"
+                        title: "Failed to Change Icon",
+                        message: error.localizedDescription
                     )
                 } else {
+                    #if DEBUG
+                    print("[AppIcon] Icon changed successfully to: \(iconName ?? "AppIcon")")
+                    #endif
                     // ✅ silently update UI (no success alert)
                     self.tblAppIcons.reloadData()
                 }
@@ -135,14 +169,17 @@ extension ChangeAppIconVC: UITableViewDelegate, UITableViewDataSource {
         cell.configure(title: title,
                        previewAssetName: previewAssetName,
                        isSelected: isSelected)
+        
+        cell.selectionStyle = .none
 
         return cell
     }
 
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let key = appIconKeys[indexPath.row]
-        let title = (key == "AppIcon") ? "Default" : "Icon\(indexPath.row)"
+        let title = (key == "AppIcon") ? "Default" : "Icon \(indexPath.row)"
         let message = "Do you want to change the app icon to '\(title)'?"
 
         AlertHelper.showConfirm(on: self,
@@ -160,3 +197,4 @@ extension ChangeAppIconVC: UITableViewDelegate, UITableViewDataSource {
         return 82
     }
 }
+

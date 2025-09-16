@@ -97,12 +97,14 @@ final class ImagePickerHelper: NSObject {
     // MARK: - Photo Library
     private func presentPhotoLibrary() {
         guard let presenter = presenter else { return }
-        var config = PHPickerConfiguration(photoLibrary: .shared())
-        config.filter = .images
-        config.selectionLimit = 1
-        let picker = PHPickerViewController(configuration: config)
-        picker.delegate = self
-        presenter.present(picker, animated: true)
+        DispatchQueue.main.async {  // ✅ Ensure presentation happens on main thread
+            var config = PHPickerConfiguration(photoLibrary: .shared())
+            config.filter = .images
+            config.selectionLimit = 1
+            let picker = PHPickerViewController(configuration: config)
+            picker.delegate = self
+            presenter.present(picker, animated: true)
+        }
     }
     
     private func checkPhotoLibraryPermission(completion: @escaping (Bool) -> Void) {
@@ -112,7 +114,9 @@ final class ImagePickerHelper: NSObject {
             completion(true)
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
-                completion(newStatus == .authorized || newStatus == .limited)
+                DispatchQueue.main.async {
+                    completion(newStatus == .authorized || newStatus == .limited)
+                }
             }
         default:
             completion(false)

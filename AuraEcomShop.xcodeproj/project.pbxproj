@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A09CB92E75A1E1007D0F66 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04A09CB82E75A1E1007D0F66 /* IQKeyboardManagerSwift */; };
 		04A2B5C02E74699100C6CDEA /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 04A2B5BF2E74699100C6CDEA /* YPImagePicker */; };
+		04EDB2212E758A84005176F0 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 04EDB2202E758A84005176F0 /* SDWebImage */; };
+		04EDB2232E758A84005176F0 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 04EDB2222E758A84005176F0 /* SDWebImageMapKit */; };
 		04F57FED2E74521F0084FBF7 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = 04F57FEC2E74521F0084FBF7 /* FirebaseAI */; };
 		04F57FEF2E74521F0084FBF7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 04F57FEE2E74521F0084FBF7 /* FirebaseAnalytics */; };
 		04F57FF12E74521F0084FBF7 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 04F57FF02E74521F0084FBF7 /* FirebaseAnalyticsCore */; };
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A09CB92E75A1E1007D0F66 /* IQKeyboardManagerSwift in Frameworks */,
 				04F57FFB2E74521F0084FBF7 /* FirebaseAuthCombine-Community in Frameworks */,
 				04F580132E74521F0084FBF7 /* FirebasePerformance in Frameworks */,
 				04FD7D702E73EA8000051644 /* Analytics in Frameworks */,
@@ -97,10 +101,12 @@
 				04A2B5C02E74699100C6CDEA /* YPImagePicker in Frameworks */,
 				04F57FF32E74521F0084FBF7 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
 				04F57FED2E74521F0084FBF7 /* FirebaseAI in Frameworks */,
+				04EDB2232E758A84005176F0 /* SDWebImageMapKit in Frameworks */,
 				04FD7D742E73EA8000051644 /* Core in Frameworks */,
 				04F57FFF2E74521F0084FBF7 /* FirebaseCrashlytics in Frameworks */,
 				04F57FF52E74521F0084FBF7 /* FirebaseAppCheck in Frameworks */,
 				04F580112E74521F0084FBF7 /* FirebaseMessaging in Frameworks */,
+				04EDB2212E758A84005176F0 /* SDWebImage in Frameworks */,
 				04FD7D722E73EA8000051644 /* Composition in Frameworks */,
 				04F5800F2E74521F0084FBF7 /* FirebaseMLModelDownloader in Frameworks */,
 			);
@@ -177,6 +183,9 @@
 				04F580162E74521F0084FBF7 /* FirebaseStorage */,
 				04F580182E74521F0084FBF7 /* FirebaseStorageCombine-Community */,
 				04A2B5BF2E74699100C6CDEA /* YPImagePicker */,
+				04EDB2202E758A84005176F0 /* SDWebImage */,
+				04EDB2222E758A84005176F0 /* SDWebImageMapKit */,
+				04A09CB82E75A1E1007D0F66 /* IQKeyboardManagerSwift */,
 			);
 			productName = AuraEcomShop;
 			productReference = 04610D832E73038E008EE240 /* AuraEcomShop.app */;
@@ -212,6 +221,8 @@
 				04FD7D832E73EAD000051644 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				04F57FEB2E74521F0084FBF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				04A2B5BE2E74699000C6CDEA /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				04EDB21F2E758A84005176F0 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				04A09CB72E75A1E1007D0F66 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04610D842E73038E008EE240 /* Products */;
@@ -247,8 +258,9 @@
 		04610D972E73038E008EE240 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 87M7TK5K4U;
@@ -270,6 +282,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHarsh1008.AuraEcomShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -279,8 +292,8 @@
 		04610D982E73038E008EE240 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 87M7TK5K4U;
@@ -453,12 +466,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		04A09CB72E75A1E1007D0F66 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.1;
+			};
+		};
 		04A2B5BE2E74699000C6CDEA /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.3.0;
+			};
+		};
+		04EDB21F2E758A84005176F0 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.2;
 			};
 		};
 		04F57FEB2E74521F0084FBF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -496,10 +525,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		04A09CB82E75A1E1007D0F66 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04A09CB72E75A1E1007D0F66 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		04A2B5BF2E74699100C6CDEA /* YPImagePicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04A2B5BE2E74699000C6CDEA /* XCRemoteSwiftPackageReference "YPImagePicker" */;
 			productName = YPImagePicker;
+		};
+		04EDB2202E758A84005176F0 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04EDB21F2E758A84005176F0 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		04EDB2222E758A84005176F0 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04EDB21F2E758A84005176F0 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 		04F57FEC2E74521F0084FBF7 /* FirebaseAI */ = {
 			isa = XCSwiftPackageProductDependency;

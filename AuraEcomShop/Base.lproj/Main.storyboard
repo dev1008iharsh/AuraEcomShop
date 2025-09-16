@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2aR-9E-hBa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,98 +9,79 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="62i-Ev-gbF">
+        <!--HomeVC-->
+        <scene sceneID="e2a-sh-djZ">
             <objects>
-                <viewController id="cRk-vA-rFW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KVv-yi-VuR">
+                <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="azJ-Ge-0xL" customClass="HomeVC" customModule="AuraEcomShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ijb-h6-AkJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vcM-JR-znM"/>
+                        <viewLayoutGuide key="safeArea" id="hoY-uO-A6G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="irX-gx-SRY"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W78-j0-prB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ze9-bU-ARJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="946"/>
+            <point key="canvasLocation" x="-1396" y="-582"/>
         </scene>
-        <!--Categories-->
-        <scene sceneID="nTW-e3-Rrz">
+        <!--SearchVC-->
+        <scene sceneID="8Qj-np-9ge">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" title="Categories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VlN-dN-0FN" customClass="HomeVC" customModule="AuraEcomShop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SwY-LM-gLW">
+                <viewController storyboardIdentifier="SearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5CK-KP-6DL" customClass="SearchVC" customModule="AuraEcomShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dhf-dI-yi9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="XLs-X2-8pl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="fDo-AH-DFV"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SCU-1x-Ne9"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VsE-5H-uza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDM-jv-HB1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-382.44274809160305" y="945.77464788732402"/>
+            <point key="canvasLocation" x="-605" y="-582"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="rgW-Ig-qKA">
+        <!--SettingVC-->
+        <scene sceneID="C7A-Hu-kf0">
             <objects>
-                <tabBarController id="2aR-9E-hBa" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="un0-t1-Rj9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="cfF-6c-sTR" kind="relationship" relationship="viewControllers" id="DrI-EH-Ojl"/>
-                        <segue destination="6dE-hz-aVt" kind="relationship" relationship="viewControllers" id="NBq-79-pJd"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U2H-aJ-MWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OG0-CZ-DJw" customClass="SettingVC" customModule="AuraEcomShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L7u-Bf-FJc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PyN-TM-O3A"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmn-VQ-iNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33" y="-483"/>
+            <point key="canvasLocation" x="808" y="-582"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="ksI-FB-CYc">
+        <!--ProfileVC-->
+        <scene sceneID="ZcT-HB-iT2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cfF-6c-sTR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="xWb-UO-a1Q"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="67W-Q6-WnP">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="VlN-dN-0FN" kind="relationship" relationship="rootViewController" id="b1d-Qi-enM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ggn-SQ-zbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OeU-Jl-Eue" customClass="ProfileVC" customModule="AuraEcomShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i1b-0y-K1D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8l2-6Z-Mnd"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbL-5y-ChT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-381" y="247"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FNQ-I7-PAb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6dE-hz-aVt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="OXt-mK-y7d"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aWI-VF-Xgg">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cRk-vA-rFW" kind="relationship" relationship="rootViewController" id="yJs-NI-zUJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jyw-wA-LGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="469" y="246"/>
+            <point key="canvasLocation" x="103" y="-582"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

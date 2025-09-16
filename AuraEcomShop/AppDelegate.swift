@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseCore
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,11 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
-        setDefaultFont()
+
+               ThemeManager.applyGlobalTheme()
+        IQKeyboardManager.shared.isEnabled = true
         return true
     }
+    /*
     func setDefaultFont() {
         // Apply Inter-Regular globally to all UILabels, UIButtons, UITextFields
         if let customFont = UIFont(name: "RobotoSlab-Regular", size: 16) {
@@ -30,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let customFont = UIFont(name: "RobotoSlab-Medium", size: 16) {
             UITextField.appearance().font = customFont
         }
-    }
+    }*/
 
     // MARK: UISceneSession Lifecycle
 

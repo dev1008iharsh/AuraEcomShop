@@ -1,15 +1,9 @@
-//
-//  CategoryCell.swift
-//  AuraEcomShop
-//
-//  Created by Harsh on 13/09/25.
-//
-
 import UIKit
+import SDWebImage
 
-final class CategoryCell: UICollectionViewCell {
+final class CategoryCVC: UICollectionViewCell {
     
-    private let imageView: UIImageView = {
+    private let imgCategory: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
@@ -18,28 +12,27 @@ final class CategoryCell: UICollectionViewCell {
         return iv
     }()
     
-    private let nameLabel: UILabel = {
+    private let lblCategoryName: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 13, weight: .semibold)
+        lbl.font = FontHelper.roboto(.medium(13))
         lbl.textAlignment = .center
         lbl.numberOfLines = 2
+        lbl.textColor = .AppTheme.textPrimary
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .systemBackground
+        contentView.backgroundColor = .AppTheme.background
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = false
         
-        // Shadow
+        // Shadow for depth
         contentView.layer.shadowColor = UIColor.black.cgColor
         contentView.layer.shadowOpacity = 0.15
         contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
         contentView.layer.shadowRadius = 4
-        contentView.layer.shadowPath = UIBezierPath(roundedRect: contentView.bounds,
-                                                    cornerRadius: 12).cgPath
         contentView.layer.shouldRasterize = true
         contentView.layer.rasterizationScale = UIScreen.main.scale
         
@@ -49,7 +42,7 @@ final class CategoryCell: UICollectionViewCell {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private func setupLayout() {
-        let stack = UIStackView(arrangedSubviews: [imageView, nameLabel])
+        let stack = UIStackView(arrangedSubviews: [imgCategory, lblCategoryName])
         stack.axis = .vertical
         stack.spacing = 6
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -62,12 +55,21 @@ final class CategoryCell: UICollectionViewCell {
             stack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.75)
+            imgCategory.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.75)
         ])
     }
     
-    func configure(with category: Category) {
-        nameLabel.text = category.name
-        imageView.image = category.image
+    func configure(with category: Category, searchQuery: String?) {
+        // Highlight search matches in the label
+        lblCategoryName.attributedText = SearchHelper.highlight(
+            text: category.name,
+            searchQuery: searchQuery
+        )
+        
+        // Load image from URL
+        imgCategory.sd_setImage(
+            with: URL(string: category.imagePath),
+            placeholderImage: UIImage(named: "DefaultCategoryImage")
+        )
     }
 }

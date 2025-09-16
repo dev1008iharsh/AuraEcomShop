@@ -1,20 +1,17 @@
-//
-//  FirebaseHelper.swift
-//  AuraEcomShop
-//
-//  Created by Harsh on 13/09/25.
-//
-
 import Foundation
 import FirebaseFirestore
 import UIKit
 
 final class FirebaseHelper {
+    
     static let shared = FirebaseHelper()
     private let db = Firestore.firestore()
     private init() {}
     
-    func addCategoryWithInlineImage(
+    private let imageKitUploadURL = URL(string: "https://upload.imagekit.io/api/v1/files/upload")!
+    private let imageKitPrivateKey = "private_xUgDM7FtTdXvdmkihmv7LGRuXLs="
+    
+    func addCategory(
         name: String,
         slug: String,
         description: String,
@@ -22,23 +19,99 @@ final class FirebaseHelper {
         image: UIImage,
         completion: @escaping (Result<Void, Error>) -> Void
     ) {
-        let categoryId = UUID().uuidString
-        let docRef = db.collection("categories").document(categoryId)
-        
-        // Compress image aggressively
-        guard let compressed = ImageCompressor.compress(
-            image: image,
-            maxByteSize: 120_000,   // ~120 KB target
-            maxDimension: 1024,
-            preferHEIC: true
-        ) else {
+        guard let compressed = ImageCompressor.compress(image: image,
+                                                        maxByteSize: 120_000,
+                                                        maxDimension: 1024)
+        else {
             completion(.failure(NSError(domain: "FirebaseHelper",
                                         code: 2001,
-                                        userInfo: [NSLocalizedDescriptionKey: "Compression failed"])))
+                                        userInfo: [NSLocalizedDescriptionKey: "Image compression failed"])))
             return
         }
         
-        let base64String = compressed.base64EncodedString()
+        uploadToImageKit(imageData: compressed) { [weak self] result in
+            switch result {
+            case .success(let imageURL):
+                self?.saveCategoryDocument(
+                    name: name,
+                    slug: slug,
+                    description: description,
+                    isActive: isActive,
+                    imageURL: imageURL,
+                    completion: completion
+                )
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    private func uploadToImageKit(imageData: Data,
+                                  completion: @escaping (Result<String, Error>) -> Void) {
+        var request = URLRequest(url: imageKitUploadURL)
+        request.httpMethod = "POST"
+        
+        let authString = "\(imageKitPrivateKey):"
+        let authData = authString.data(using: .utf8)!.base64EncodedString()
+        request.setValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
+        
+        let boundary = UUID().uuidString
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        var body = Data()
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"category.jpg\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+        body.append(imageData)
+        body.append("\r\n".data(using: .utf8)!)
+        
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"fileName\"\r\n\r\n".data(using: .utf8)!)
+        body.append("category.jpg\r\n".data(using: .utf8)!)
+        
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"folder\"\r\n\r\n".data(using: .utf8)!)
+        body.append("categories/\r\n".data(using: .utf8)!)
+        
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"useUniqueFileName\"\r\n\r\n".data(using: .utf8)!)
+        body.append("true\r\n".data(using: .utf8)!)
+        
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        request.httpBody = body
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error { completion(.failure(error)); return }
+            
+            guard let data = data,
+                  let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                completion(.failure(NSError(domain: "ImageKit",
+                                            code: 2002,
+                                            userInfo: [NSLocalizedDescriptionKey: "Invalid ImageKit response"])))
+                return
+            }
+            
+            if let url = json["url"] as? String {
+                completion(.success(url))
+            } else {
+                let message = json["message"] as? String ?? "Unexpected ImageKit response"
+                completion(.failure(NSError(domain: "ImageKit",
+                                            code: 2003,
+                                            userInfo: [NSLocalizedDescriptionKey: message])))
+            }
+        }.resume()
+    }
+    
+    private func saveCategoryDocument(
+        name: String,
+        slug: String,
+        description: String,
+        isActive: Bool,
+        imageURL: String,
+        completion: @escaping (Result<Void, Error>) -> Void
+    ) {
+        let categoryId = UUID().uuidString
+        let docRef = db.collection("categories").document(categoryId)
         
         let data: [String: Any] = [
             "categoryId": categoryId,
@@ -46,7 +119,7 @@ final class FirebaseHelper {
             "slug": slug,
             "description": description,
             "isActive": isActive,
-            "imageBase64": base64String,
+            "imagePath": imageURL,
             "createdAt": FieldValue.serverTimestamp()
         ]
         

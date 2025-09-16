@@ -1,19 +1,17 @@
 import UIKit
+import SDWebImage
+
+import Foundation
 import FirebaseFirestore
-struct Category: Codable, Identifiable {
-    @DocumentID var id: String?
-    var categoryId: String
-    var name: String
-    var slug: String
-    var description: String
-    var isActive: Bool
-    var imageBase64: String
-    var createdAt: Date?
+
+struct Category: Codable {
+    @DocumentID var id: String?   // Firestore document ID
     
-    var image: UIImage? {
-        if let data = Data(base64Encoded: imageBase64) {
-            return UIImage(data: data)
-        }
-        return nil
-    }
+    let categoryId: String
+    let name: String
+    let slug: String
+    let description: String
+    let isActive: Bool
+    let imagePath: String
+    let createdAt: Date?
 }

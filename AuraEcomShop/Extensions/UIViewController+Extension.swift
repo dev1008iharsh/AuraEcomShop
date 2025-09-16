@@ -10,6 +10,7 @@ import UIKit
 
 extension UIViewController {
     
+    /*
     func showAlert(title: String = "Info", message: String, okTitle: String = "OK", completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: okTitle, style: .default) { _ in
@@ -30,5 +31,5 @@ extension UIViewController {
             onConfirm()
         }))
         present(alert, animated: true)
-    }
+    }*/
 }

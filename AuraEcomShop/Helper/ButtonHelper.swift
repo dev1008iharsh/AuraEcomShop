@@ -7,48 +7,77 @@
 
 import UIKit
 
-enum ButtonHelper {
+
+import UIKit
+
+enum ButtonStyle {
+    case primary
+    case success
+    case warning
+    case error
+    case disabled
+}
+
+final class ButtonHelper {
     
-    /// Create a styled rounded button
-    static func makeRoundedButton(title: String,
-                                  backgroundColor: UIColor,
-                                  textColor: UIColor,
-                                  image: UIImage? = nil,
-                                  cornerRadius: CGFloat = 12,
-                                  fontSize: CGFloat = 16) -> UIButton {
+    /// Creates a themed rounded button with optional icon
+    static func makeButton(title: String,
+                           style: ButtonStyle = .primary,
+                           systemImageName: String? = nil,
+                           font: UIFont = FontHelper.roboto(.medium(16)),
+                           height: CGFloat = 50,
+                           cornerRadius: CGFloat = 10,
+                           addShadow: Bool = true) -> UIButton {
         
-        let button = UIButton(type: .system)
-        
-        // Config with image + title
         var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = backgroundColor
-        config.baseForegroundColor = textColor
-        config.cornerStyle = .large
-        config.image = image
-        config.imagePlacement = .leading
-        config.imagePadding = image == nil ? 0 : 8
+        config.title = title
         
-        // Title with Roboto font
-        if let robotoFont = UIFont(name: "Roboto-Regular", size: fontSize) {
-            var titleAttr = AttributedString(title)
-            titleAttr.font = robotoFont
-            config.attributedTitle = titleAttr
-        } else {
-            config.title = title
+        // Icon
+        if let icon = systemImageName {
+            config.image = UIImage(systemName: icon)
+            config.imagePlacement = .leading
+            config.imagePadding = 8
         }
         
-        button.configuration = config
+        // 🎨 Theme color handling
+        switch style {
+        case .primary:
+            config.baseBackgroundColor = .AppTheme.primary
+            config.baseForegroundColor = .white
+        case .success:
+            config.baseBackgroundColor = .AppTheme.success
+            config.baseForegroundColor = .white
+        case .warning:
+            config.baseBackgroundColor = .AppTheme.warning
+            config.baseForegroundColor = .white
+        case .error:
+            config.baseBackgroundColor = .AppTheme.error
+            config.baseForegroundColor = .white
+        case .disabled:
+            config.baseBackgroundColor = .AppTheme.disabled
+            config.baseForegroundColor = .white
+        }
+        
+        config.cornerStyle = .medium
+        
+        let button = UIButton(configuration: config)
         button.layer.cornerRadius = cornerRadius
-        button.layer.masksToBounds = false
+        button.titleLabel?.font = font
+        button.heightAnchor.constraint(equalToConstant: height).isActive = true
         
-        // Add shadow for elevation
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.15
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowRadius = 4
+        // Shadow for elevation
+        if addShadow {
+            button.layer.shadowColor = UIColor.black.cgColor
+            button.layer.shadowOpacity = 0.12
+            button.layer.shadowOffset = CGSize(width: 0, height: 2)
+            button.layer.shadowRadius = 4
+            button.layer.masksToBounds = false
+        }
         
-        // Default height
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        // Disabled handling
+        if style == .disabled {
+            button.isEnabled = false
+        }
         
         return button
     }

@@ -44,8 +44,8 @@ final class MainTabBarVC: UITabBarController {
         )
         
         // Settings
-        let settingsVC = UIViewController()
-        
+        //let settingsVC = UIViewController()
+        let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingVC")
         settingsVC.navigationItem.title = "Settings"
         let navSettings = wrapInNav(
             settingsVC,

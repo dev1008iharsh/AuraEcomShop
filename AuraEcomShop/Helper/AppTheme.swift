@@ -2,12 +2,12 @@ import UIKit
 
 extension UIColor {
     struct AppTheme {
-        static let primary = UIColor.systemIndigo
-        static let secondary = UIColor.systemBlue
-        //static let background = UIColor.systemBackground
-        static let background = UIColor.systemGroupedBackground
+        static let primary = UIColor.systemBlue
+        static let secondary = UIColor.systemIndigo
+        static let background = UIColor.systemBackground
         static let secondaryBackground = UIColor.secondarySystemBackground
-        static let groupedBackground = UIColor.systemGroupedBackground
+        static let groupedBackground = UIColor.systemGroupedBackground // ✅ light gray for groups
+        static let cellBackground = UIColor.secondarySystemBackground // ✅ white cards inside
         static let textPrimary = UIColor.label
         static let textSecondary = UIColor.secondaryLabel
         static let success = UIColor.systemGreen

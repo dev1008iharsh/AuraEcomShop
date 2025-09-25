@@ -19,7 +19,50 @@ enum ButtonStyle {
 }
 
 final class ButtonHelper {
-    
+    /// Creates a pill-shaped button (cornerRadius = height/2)
+     static func makePillButton(title: String,
+                                style: ButtonStyle = .primary,
+                                systemImageName: String? = nil,
+                                font: UIFont = FontHelper.roboto(.medium(16)),
+                                height: CGFloat = 55) -> UIButton {
+         
+         var config = UIButton.Configuration.filled()
+         config.title = title
+         if let icon = systemImageName {
+             config.image = UIImage(systemName: icon)
+             config.imagePlacement = .leading
+             config.imagePadding = 8
+         }
+         
+         // 🎨 Theme color handling
+         switch style {
+         case .primary:
+             config.baseBackgroundColor = .AppTheme.primary
+             config.baseForegroundColor = .white
+         case .success:
+             config.baseBackgroundColor = .AppTheme.success
+             config.baseForegroundColor = .white
+         case .warning:
+             config.baseBackgroundColor = .AppTheme.warning
+             config.baseForegroundColor = .white
+         case .error:
+             config.baseBackgroundColor = .AppTheme.error
+             config.baseForegroundColor = .white
+         case .disabled:
+             config.baseBackgroundColor = .AppTheme.disabled
+             config.baseForegroundColor = .white
+         }
+         
+         let btn = UIButton(configuration: config)
+         btn.titleLabel?.font = font
+         btn.heightAnchor.constraint(equalToConstant: height).isActive = true
+         
+         // pill shape: corner radius = height/2
+         btn.layer.cornerRadius = height / 2
+         btn.clipsToBounds = true
+         
+         return btn
+     }
     /// Creates a themed rounded button with optional icon
     static func makeButton(title: String,
                            style: ButtonStyle = .primary,

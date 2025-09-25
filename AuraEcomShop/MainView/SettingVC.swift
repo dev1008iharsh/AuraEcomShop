@@ -154,7 +154,56 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        print("Tapped: Section \(indexPath.section), Row \(indexPath.row)")
+        
+        let item: (String, String)
+        switch indexPath.section {
+        case 1: item = isSearching ? filteredSections[0][indexPath.row] : accountItems[indexPath.row]
+        case 2: item = isSearching ? filteredSections[1][indexPath.row] : preferenceItems[indexPath.row]
+        case 3: item = isSearching ? filteredSections[2][indexPath.row] : managementItems[indexPath.row]
+        default: return
+        }
+        
+        let title = item.0
+        print("Tapped on \(title)")
+        
+        if title == "Logout" {
+            AlertHelper.showConfirm(
+                on: self,
+                title: "Logout",
+                message: "Are you sure you want to logout?",
+                confirmTitle: "Yes",
+                cancelTitle: "Cancel",
+                confirmStyle: .destructive
+            ) {
+                FirebaseAuthHelper.shared.logoutUser { [weak self] result in
+                    switch result {
+                    case .success:
+                        let loginVC = LoginVC()
+                        let nav = UINavigationController(rootViewController: loginVC)
+                        nav.navigationBar.prefersLargeTitles = false
+                        UIApplication.shared.windows.first?.rootViewController = nav
+                        UIApplication.shared.windows.first?.makeKeyAndVisible()
+                    case .failure(let error):
+                        AlertHelper.showOK(on: self!,
+                                           title: "Error",
+                                           message: error.localizedDescription)
+                    }
+                }
+            }
+        }
+        
+        if title == "Delete Account" {
+            AlertHelper.showConfirm(
+                on: self,
+                title: "Delete Account",
+                message: "This action cannot be undone. Are you sure?",
+                confirmTitle: "Yes",
+                cancelTitle: "Cancel",
+                confirmStyle: .destructive
+            ) {
+                print("⚡ TODO: Add delete account logic")
+            }
+        }
     }
 }
 

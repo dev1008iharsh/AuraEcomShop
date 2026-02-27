@@ -1,6 +1,13 @@
 # 🛒 AuraEcomShop — Firebase E-Commerce App (UIKit)
 
 > Fully programmatic iOS e-commerce application built with Swift & UIKit, powered by Firebase backend services.
+---
+
+## 📱 Screenshots preview
+
+<img width="760" height="384" alt="Screenshot 2026-02-27 at 2 24 53 PM" src="https://github.com/user-attachments/assets/7f9b4cf9-2f63-4667-b05b-f6a7da36dcfd" />
+
+<img width="766" height="399" alt="Screenshot 2026-02-27 at 2 25 45 PM" src="https://github.com/user-attachments/assets/2465256d-6103-4055-90f8-96974073584c" />
 
 ---
 

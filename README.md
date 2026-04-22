@@ -96,3 +96,22 @@ Active portfolio project demonstrating advanced UIKit development and Firebase i
 ---
 
 ⭐️ If you find this project useful, consider giving it a star!
+
+
+
+<h2>👨‍💻 Author</h2>
+
+<p>
+<b>Harsh Darji — iOS Developer 🚀</b>
+</p>
+
+<ul>
+<li><b>Developer:</b> Harsh</li>
+<li><b>Role:</b> Senior iOS Engineer</li>
+<li><b>Phone:</b> <a href="tel:+919662108047">+91 9662108047</a></li>
+<li><b>Email:</b> <a href="mailto:dev.iharsh1008@gmail.com">dev.iharsh1008@gmail.com</a></li>
+<li><b>GitHub:</b> <a href="https://github.com/dev1008iharsh">dev1008iharsh</a></li>
+<li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/dev1008iharsh/">dev1008iharsh</a></li>
+</ul>
+
+---
